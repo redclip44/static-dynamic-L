@@ -1,0 +1,96 @@
+* Service Communication, Information Exchange - Transmission
+* Eben Taljaard 
+* 2021/08/31
+* Library
+************************************************************************
+process = windll.kernel32.OpenProcess(PROCESS_VM_READ, 0, PROCESS_ID)
+
+readProcMem = windll.kernel32.ReadProcessMemory
+
+buf = ctypes.create_string_buffer(STRLEN)
+
+for i in range(1,100):
+
+if readProcMem(process, hex(i), buf, STRLEN, 0):
+..
+
+if abc in ['if','ni','cd','hw','ui','db'] then NULL // IPC
+
+if abc in ['if','ni','cd','hw','ui','db'] then !NULL // App
+
+	if user_input, key_press
+
+if cba in ['if','ni','cd','hw','ui','db'] then NULL // ???
+
+
+if cba in ['if','ni','cd','hw','ui','db'] then !NULL // KRN
+
+	if program_counter, cnt   
+
+if bac mid['pc','cp'] AND cab mid['cp','pc']         // Rez <p>eer<c>lient, <p>roducer<c>onsumer
+
+	if data, buff
+
+	if chan, async
+
+// More code required here
+
+if c1==r2:
+    a=[[rand.randint(1,9) for i in range(c1)]for j in range(r1)]
+    for i in range(r1):
+        for j in range(c1):
+            print a[i][j],
+        print
+    b=[[rand.randint(1,9) for i in range(c2)]for j in range(r2)]
+    for i in range(r2):
+        for j in range(c2):
+            print b[i][j],
+        print
+    c=[[0 for i in range (c2)] for j in range(r1)]
+  
+    for i in range(r1):
+        for j in range(c2):
+            for k in range(c2):
+                c[i][j]+=a[i][k]*b[k][j]
+    for i in range(r1):
+        for j in range(c2):
+            print c[i][j],
+        print
+
+* Set Bool
+
+if IPC 
+      return
+if Rez       
+      reset
+if KRN, App
+      return iter, line
+if BND, xor[nnnnn,nnnnn,nnnnn]                              // tel
+      out pc OR pc
+
+* Sock
+import socket
+serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+serv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+serv.bind(('0.0.0.0', 5003))
+serv.listen(5)
+while True:
+   conn, addr = serv.accept()
+   from_client = ''
+   while True:
+      data = conn.recv(4096)
+      if not data:
+         break
+      from_client += data
+      print from_client
+   conn.close()
+   print('client disconnected')
+   client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   client.connect(('192.168.101.100', 5003))
+   client.send("I am CLIENT<br>")
+   from_server = client.recv(4096)
+   client.close()
+   print(from_server)
+
+   
+#Twenty-four bytes to send
